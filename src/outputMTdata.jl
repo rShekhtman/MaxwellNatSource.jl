@@ -69,7 +69,7 @@ function dumpMT( mc::Array{Float64,1},
     sigma,dsigma = Mis.modelfun(sigt)
     sigmaloc = interpGlobalToLocal(sigma,Mis.gloc.PForInv,Mis.gloc.sigmaBackground)
 
-    exportOcTreeModelRoman("m.con", pInv.MInv, sigmaloc)
+    exportUBCOcTreeModel("m.con", pInv.MInv, sigmaloc)
 
     return
 end  # function dumpMT

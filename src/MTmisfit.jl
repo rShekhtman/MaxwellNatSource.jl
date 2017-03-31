@@ -35,7 +35,7 @@ function misRatio(dc::Array{Complex128},   # (nr*4,2) simulated data E and H dat
     Wd    = vec(Wd)
     mis   = 0.5 * sum((Wd.*res).^2)  # data misfit
     dmis  = dZdD'*(Wd.*(Wd.*res))
-    d2mis = dZdD' * sdiag(Wd) * sdiag(Wd) * dZdD
+    d2mis = dZdD' * sdiag(Wd.^2) * dZdD
 
     dmis  = real2complex(dmis)
 
